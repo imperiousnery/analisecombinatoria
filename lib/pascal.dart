@@ -79,7 +79,7 @@ class _PascalTriangleScreenState extends State<PascalTriangleScreen> {
   // Função para gerar o triângulo de Pascal
 // Parâmetro: númeroDeLinhas - o número de linhas desejado no triângulo
 void generatePascalTriangle(int numeroDeLinhas) {
-    List<List<int>> triângulo = []; // Inicializa uma lista vazia para armazenar o triângulo de Pascal
+    List<List<int>> triangulo = []; // Inicializa uma lista vazia para armazenar o triângulo de Pascal
     
     // Loop para gerar cada linha do triângulo
     for (int linha = 0; linha < numeroDeLinhas; linha++) {
@@ -93,16 +93,16 @@ void generatePascalTriangle(int numeroDeLinhas) {
                 linhaAtual.add(1);
             } else {
                 // Calcula o valor do número atual como a soma dos dois números acima dele na linha anterior
-                int valor = triângulo[linha - 1][coluna - 1] + triângulo[linha - 1][coluna];
+                int valor = triangulo[linha - 1][coluna - 1] + triangulo[linha - 1][coluna];
                 // Adiciona o valor à linha
                 linhaAtual.add(valor);
             }
         }
         // Adiciona a linha gerada ao triângulo
-        triângulo.add(linhaAtual);
+        triangulo.add(linhaAtual);
     }
     // Atualiza o triângulo de Pascal com os novos valores
     setState(() {
-        pascalTriangle = triângulo;
+        pascalTriangle = triangulo;
     });
-}
+}}
